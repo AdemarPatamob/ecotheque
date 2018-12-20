@@ -9,27 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product
 {
-    const CATEGORY = [
-        'Computer',
-        'Phone',
-        'Tv',
-        'Tablet'
-    ];
-    const BRAND = [
-        'Lenovo',
-        'Asus',
-        'Dell',
-        'HP',
-        'Apple',
-        'Acer',
-        'Samsung'
-    ];
-    const NEED = [
-        'Gaming',
-        'Video',
-        'Office',
-        'Design'
-    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
