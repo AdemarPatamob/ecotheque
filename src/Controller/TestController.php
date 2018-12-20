@@ -14,9 +14,9 @@ class TestController extends AbstractController
     public function index()
     {
         $value = 'Robert il est trop beau';
-        return new Response(json_encode($value));
-        /*return $this->render('test/index.html.twig', [
+        //return new Response(json_encode($value));
+        return $this->render('test/index.html.twig', [
             'controller_name' => 'TestController',
-        ]);*/
+        ]);
     }
 }

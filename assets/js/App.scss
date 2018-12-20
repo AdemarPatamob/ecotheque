@@ -1,0 +1,42 @@
+$primaryColor: #1a6d05;
+$secondaryColor: #076196;
+
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+
+.App{
+  height: 100%;
+  padding-bottom: 8em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  .title {
+    background-color: #f9f9f9;
+    color: #076196;
+    text-align: center;
+    font-size : 2em;
+    font-weight: bold;
+    padding: 1.5% 1.5% 1.5% 1.5%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;  
+    margin-bottom: 1em;
+  }
+  .all-btn{
+    color: white;
+    font-weight: 500;
+    background-color: #076196;
+    border-color: #076196;
+    &:hover{
+      background-color: #076196;
+      border-color: #076196;
+    }
+  }
+}

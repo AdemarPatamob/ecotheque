@@ -11,30 +11,27 @@ require('../css/app.scss');
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // var $ = require('jquery');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+console.log('Hello Wilder! Edit me in assets/js/app.js');
 import React, { Component } from 'react';
-
-class Test extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            test : '',
-        }
-    }
-    componentDidMount() {
-        fetch(`http://localhost:8000/test`)
-            .then(results => results.json())
-            .then((data) => {
-                this.setState({ test : data });
-            });
-    }
-
+import './App.scss';
+import { Route, Switch } from 'react-router-dom';
+import Brands from './containers/Brands';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import Home from './components/Home';
+class App extends Component {
     render() {
-        const { test } = this.state ;
-        console.log('youyou');
-        return ({test}
-        );
+        return (
+            <div className="App">
+            <NavBar />
+            <Brands />
+            <Switch>
+            <Route exact path="/" component={Home} />
+        </Switch>
+        <Footer />
+        </div>
+    );
     }
 }
 
-export default Test;
+export default App;
