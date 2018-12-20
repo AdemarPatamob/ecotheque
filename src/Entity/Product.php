@@ -9,27 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product
 {
-    const CATEGORY = [
-        'Computer',
-        'Phone',
-        'Tv',
-        'Tablet'
-    ];
-    const BRAND = [
-        'Lenovo',
-        'Asus',
-        'Dell',
-        'HP',
-        'Apple',
-        'Acer',
-        'Samsung'
-    ];
-    const NEED = [
-        'Gaming',
-        'Video',
-        'Office',
-        'Design'
-    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -95,7 +75,7 @@ class Product
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $descritption;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -106,6 +86,11 @@ class Product
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $model;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ecologyNotice;
 
     public function getId(): ?int
     {
@@ -244,14 +229,14 @@ class Product
         return $this;
     }
 
-    public function getDescritption(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descritption;
+        return $this->description;
     }
 
-    public function setDescritption(?string $descritption): self
+    public function setDescription(?string $description): self
     {
-        $this->descritption = $descritption;
+        $this->description = $description;
 
         return $this;
     }
@@ -279,4 +264,18 @@ class Product
 
         return $this;
     }
+
+    public function getEcologyNotice(): ?string
+    {
+        return $this->ecologyNotice;
+    }
+
+    public function setEcologyNotice(?string $ecologyNotice): self
+    {
+        $this->ecologyNotice = $ecologyNotice;
+
+        return $this;
+    }
+
+
 }
