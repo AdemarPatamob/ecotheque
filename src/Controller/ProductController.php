@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+
 use App\Form\ProductSearchType;
 use App\Form\ProductSearchByFiltersType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Product;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 class ProductController extends AbstractController
@@ -84,5 +87,6 @@ class ProductController extends AbstractController
             'controller_name' => 'ProductController', 'products' => $products,
             'formfilter' => $formfilter->createView()
         ]);
+
     }
 }
