@@ -13,6 +13,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 use App\Form\ProductSearchType;
 use App\Form\ProductSearchByFiltersType;
+use Symfony\Component\Serializer\SerializerInterface;
 
 
 class ProductController extends AbstractController
@@ -25,9 +26,10 @@ class ProductController extends AbstractController
     /**
      * @Route("/search", name = "search", methods = {"GET", "POST"})
      * @param Request $request
-     * @return Response
+     * @param SerializerInterface $serializer
+     * @return false|string
      */
-        public function index(Request $request)
+        public function index(Request $request, SerializerInterface $serializer) : Response
         {
             /*$products = $this->getDoctrine()
                 ->getRepository(Product::class)
@@ -56,11 +58,12 @@ class ProductController extends AbstractController
                 $data = $form->getData();
                 // $data contient les données du $_POST
                 // Faire une recherche dans la BDD avec les infos de $data...*/
+            $jsonContent = $serializer->serialize($products, 'json');
+            $response = new Response();
+            $response->setContent($jsonContent);
 
+            return $response;
 
-            return $this->render('product/index.html.twig', [
-                'controller_name' => 'ProductController', 'products' => $products,
-            ]);
         }
 
        /* /**
