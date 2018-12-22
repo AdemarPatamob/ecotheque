@@ -29,18 +29,14 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function findLikeFilter($category, $brand, $energyClass, $ges, $need)
+    public function findLikeFilter($category, $brand, $need)
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.category LIKE :category')
             ->andWhere('a.brand LIKE :brand')
-            ->andWhere('a.energyClass LIKE :energyClass')
-            ->andWhere('a.ges LIKE :ges')
             ->andWhere('a.need LIKE :need')
             ->setParameter('category', '%'.$category.'%')
             ->setParameter('brand', '%'.$brand.'%')
-            ->setParameter('energyClass', '%'.$energyClass.'%')
-            ->setParameter('ges', '%'.$ges.'%')
             ->setParameter('need', '%'.$need.'%')
             ->orderBy('a.id', 'DESC')
             ->getQuery()
