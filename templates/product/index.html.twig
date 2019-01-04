@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="jumbotron">
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+
+</div>
+
+    {% for product in products %}
+        <div>
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.need }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.energyClass }}</td>
+                <td>{{ product.ges }}</td>
+                <td>{{ product.batteryMovable }}</td>
+                <td>{{ product.batteryRecyclability }}</td>
+                <td>{{ product.screenSize }}</td>
+                <td>{{ product.shutDownAuto }}</td>
+                <td>{{ product.autonomy }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.image }}</td>
+                <td>{{ product.model }}</td>
+                <td>{{ product.ecologyNotice }}</td>
+            </tr>
+        </div>
+    {% endfor %}
+
+{% endblock %}
